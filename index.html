@@ -356,10 +356,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         }
 
         function adicionarAoCarrinho(link) {
-            showPreloader(function() {
-                window.location.href = link;
-            });
-        }
+        window.location.href = link + "?" + new URLSearchParams(window.location.search);
+    }
 
         // Bloqueie a entrada manual no campo de entrada
         document.getElementById('numero').addEventListener('input', function () {
