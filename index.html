@@ -206,7 +206,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 				<div class="elementor-element elementor-element-74afe0e elementor-widget-mobile__width-inherit elementor-widget__width-inherit elementor-widget elementor-widget-html" data-id="74afe0e" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
 			
-    <style>
+  <style>
         body, html {
             margin: 0;
             padding: 0;
@@ -345,7 +345,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
     <script>
         function showPreloader(callback) {
             document.getElementById('preloader').style.display = 'flex';
-            setTimeout(callback, 3000); // 4 segundos para completar 3 piscadas
+            setTimeout(callback, 3000); // 3 segundos para completar 3 piscadas
         }
 
         function incrementar() {
@@ -458,8 +458,10 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         }
 
         function adicionarAoCarrinho(link) {
-        window.location.href = link + "?" + new URLSearchParams(window.location.search);
-    }
+            showPreloader(function() {
+                window.location.href = link + "?" + new URLSearchParams(window.location.search);
+            });
+        }
 
         // Bloqueie a entrada manual no campo de entrada
         document.getElementById('numero').addEventListener('input', function () {
