@@ -77,6 +77,85 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 .elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$=".svg"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style>										<img fetchpriority="high" decoding="async" width="800" height="98" src="images/Logotipo-Viva-Sorte--1024x125.png" class="attachment-large size-large wp-image-607" alt="" srcset="images/Logotipo-Viva-Sorte--1024x125.png 1024w, images/Logotipo-Viva-Sorte--300x37.png 300w, images/Logotipo-Viva-Sorte--768x94.png 768w, images/Logotipo-Viva-Sorte-.png 1280w" sizes="(max-width: 800px) 100vw, 800px">													</div>
 				</div>
 					</div>
+					
+    <div id="overlay" onclick="fecharIframe()"></div>
+    <div id="iframeContainer">
+        <span class="fechar-btn" onclick="fecharIframe()">×</span>
+        <iframe src="about:blank" id="iframe"></iframe>
+    </div>
+
+    <script>
+        // Mostrar o popup com o iframe após 3 segundos
+        setTimeout(function() {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("iframeContainer").style.display = "block";
+            document.getElementById("iframe").src = "https://girasorteoficial.vercel.app/";
+        }, 3000);
+
+        function fecharIframe() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("iframeContainer").style.display = "none";
+        }
+
+        // Ouvindo mensagens do iframe
+        window.addEventListener('message', function(event) {
+            if (event.data === 'loadingComplete') {
+                fecharIframe();
+            }
+        });
+    </script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Overlay preto transparente */
+            z-index: 10;
+        }
+
+        #iframeContainer {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%); /* Centraliza o iframe perfeitamente */
+            width: 100%; /* Largura do iframe */
+            height:72%; /* Altura do iframe */
+            z-index: 20;
+            background: white;
+            border-radius: 80px; /* Bordas arredondadas */
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .fechar-btn {
+            position: absolute;
+            top: -3%;
+            right: -1%;
+            font-size: 30px;
+            cursor: pointer;
+            color: white; /* Cor do texto do botão */
+            border: none;
+            padding: 10px; /* Espaçamento interno do botão */
+            border-radius: 5px; /* Bordas arredondadas do botão */
+        }
+    </style>
+
+
 				</div>
 			<div class="elementor-element elementor-element-830ad4a e-flex e-con-boxed e-con e-parent" data-id="830ad4a" data-element_type="container" data-settings="{" content_width":"boxed"}"="" data-core-v316-plus="true">
 					<div class="e-con-inner">
